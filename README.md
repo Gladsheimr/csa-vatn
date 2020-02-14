@@ -1,6 +1,3 @@
-# csa-vatn
-Vatn is water in Old Norse. This is an example of a complete stack application to track water poured using audio.
-
 # Overview 
 
 Passively track water usage and its effect on health signals such as lethargy, headaches and sleep. 
