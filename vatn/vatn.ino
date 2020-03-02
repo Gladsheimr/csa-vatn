@@ -1,5 +1,36 @@
 #include <PDM.h>
 
+#include "UsefulBuf.h"
+#include "qcbor.h"
+
+
+
+static uint8_t spBigBuf[2200];
+
+/*
+ Some very minimal tests.
+ */
+int BasicEncodeTest()
+{
+   // Very simple CBOR, a map with one boolean that is true in it
+   QCBOREncodeContext EC;
+
+   QCBOREncode_Init(&EC, UsefulBuf_FROM_BYTE_ARRAY(spBigBuf));
+
+   QCBOREncode_OpenMap(&EC);
+   QCBOREncode_AddBoolToMapN(&EC, 66, true);
+   QCBOREncode_CloseMap(&EC);
+
+   UsefulBufC Encoded;
+   if(QCBOREncode_Finish(&EC, &Encoded)) {
+      return -1;
+   }
+
+}
+
+
+//#include "sensor_aq_none.h"
+
 short sampleBuffer[256];
 
 // number of samples read
