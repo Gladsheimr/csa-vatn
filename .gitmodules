@@ -1,0 +1,3 @@
+[submodule "vatn/ingestion"]
+	path = vatn/ingestion
+	url = https://github.com/edgeimpulse/ingestion-sdk-c
